@@ -42,17 +42,17 @@ public class SampleController {
         return text;
     }
     /**
-     * TODO: extract a path variable from this endpoint and respond with it.
+     * DONE: extract a path variable from this endpoint and respond with it.
      * This should work the same as the above example. For example, an HTTP request to GET localhost:9000/long/1
      * should respond with "1".
      */
     @GetMapping("/long/{id}")
-    public long getPathVariable(){
+    public long getPathVariable(@PathVariable int id){
         //you will need to change the method's parameters and return the extracted path variable.
-        return 0;
+        return id;
     }
     /**
-     * TODO: extract the request body and respond with it.
+     * DONE: extract the request body and respond with it.
      * Similarly to how path variables are extracted with an annotation, request bodies may be extracted in a similar
      * way with the @RequestBody annotation. In that case, Spring will deserialize a JSON request body into a Java
      * Object using Jackson Databind. For example:
@@ -74,8 +74,8 @@ public class SampleController {
      * }
      */
     @PostMapping(value = "/requestbody")
-    public Sample postSample(){
+    public Sample postSample(@RequestBody Sample s){
         //you will need to change the method's parameters and return the extracted request body.
-        return null;
+        return s;
     }
 }
